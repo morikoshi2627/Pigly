@@ -3,9 +3,7 @@
 ## 環境構築・画像取り扱いについて
 
 - 画像は `storage/app/public/images` に保存されています。
-- 画像をブラウザからアクセスするために、php artisan migrate --seed を実行後、以下のコマンドを実行してください。
-
-php artisan storage:link
+- 画像をブラウザからアクセスするために、php artisan migrate --seed を実行後、php artisan storage:link を実行してください。
 
 ### Docker ビルド
 
