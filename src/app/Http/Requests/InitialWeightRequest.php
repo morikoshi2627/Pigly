@@ -34,11 +34,11 @@ class InitialWeightRequest extends FormRequest
         return [
             'weight.required' => '現在の体重を入力してください',
             'weight.numeric' => '体重は数値で入力してください',
-            'weight.regex' => '小数点は1桁で入力してください',
+            'weight.regex' => '4桁までの数字で入力してください（小数点は1桁）',
 
             'target_weight.required' => '目標体重を入力してください',
-            'target_weight.numeric' => '目標体重は数値で入力してください',
-            'target_weight.regex' => '小数点は1桁で入力してください',
+            'target_weight.numeric' => '目標体重は4桁までの数字で入力してください',
+            'target_weight.regex' => '4桁までの数字で入力してください（小数点は1桁）',
         ];
     }
 }

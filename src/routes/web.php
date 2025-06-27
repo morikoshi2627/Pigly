@@ -39,19 +39,25 @@ Route::post('/weight_logs/create', [WeightLogController::class, 'store'])->middl
 // 体重検索
 Route::get('/weight_logs/search', [WeightLogController::class, 'search'])->middleware('auth')->name('weight_logs.search');
 
-// 体重詳細
-Route::get('/weight_logs/{weightLog}', [WeightLogController::class, 'show'])->middleware('auth')->name('weight_logs.show');
-
-// 体重更新
-Route::post('/weight_logs/{weightLog}/update', [WeightLogController::class, 'update'])->middleware('auth')->name('weight_logs.update');
-
-// 体重削除
-Route::post('/weight_logs/{weightLog}/delete', [WeightLogController::class, 'destroy'])->middleware('auth')->name('weight_logs.delete');
-
 // 目標体重設定画面
 Route::get('/weight_logs/goal_setting', [WeightLogController::class, 'editTarget'])->middleware('auth')->name('weight_logs.goal_setting');
+
+// 目標体重設定更新処理（POST)
+Route::post('/weight_logs/goal_setting', [WeightLogController::class, 'updateTarget'])->middleware('auth')->name('weight_logs.goal_setting.update');
 
 // logout を明示的に上書き登録
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->name('logout')
     ->middleware('web');
+
+// 体重詳細(情報更新画面)
+Route::get('/weight_logs/{weightLog}', [WeightLogController::class, 'show'])->middleware('auth')->name('weight_logs.show');
+
+// 体重更新(情報更新画面)
+Route::post('/weight_logs/{weightLog}/update', [WeightLogController::class, 'update'])->middleware('auth')->name('weight_logs.update');
+
+// 体重更新画面表示用（GET）
+Route::get('/weight_logs/{weightLog}/edit', [WeightLogController::class, 'edit'])->middleware('auth')->name('weight_logs.edit');
+
+// 体重削除
+Route::post('/weight_logs/{weightLog}/delete', [WeightLogController::class, 'destroy'])->middleware('auth')->name('weight_logs.delete');

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  
+
   <header class="header">
     <div class="header-inner">
       PiGly
@@ -20,7 +20,7 @@
   </header>
 
   <main class="login-content">
-    
+
     <div class="login-inner">
 
       <!-- タイトル -->
@@ -30,7 +30,7 @@
       <form class="login-link" method="POST" action="{{ route('login') }}" novalidate>
         @csrf
         <div class="login-email">
-          <input type="email" name="email" required />
+          <input type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレスを入力" required/>
           @error('email')
           <div class="form__error">
             {{ $message }}
@@ -38,7 +38,7 @@
           @enderror
         </div>
         <div class="login-password">
-          <input type="password" name="password" required />
+          <input type="password" name="password" placeholder="パスワードを入力" required />
           @error('password')
           <div class="form__error">
             {{ $message }}
@@ -50,7 +50,7 @@
 
       <!-- ログインリンク -->
       <div class="register-login-link">
-          <a href="{{ route('register.step1') }}">アカウント作成はこちら</a>
+        <a href="{{ route('register.step1') }}">アカウント作成はこちら</a>
       </div>
 
     </div>
