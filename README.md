@@ -32,7 +32,7 @@
 
 ### アプリ確認用 URL
 
-- アプリ URL: http://localhost/
+- アプリ URL: http://localhost/weight_logs
 - phpMyAdmin: http://localhost:8080/
   （ユーザー名: pigly_user、パスワード:pigly_pass）
 
