@@ -1,5 +1,93 @@
+.pigly-whole{
+    background: linear-gradient(20deg,#d5a9dc,#fed7d4,#ffddf9,#ffbde1,#ffd2d5,#fb95c5,#fed7d4,#d5a9dc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pigly-inner{
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 480px;
+}
+
+.header{
+    text-align: center;
+}
+
+.header-inner{
+    color: #ed87ef;
+    font-size: 50px;
+    font-family: serif;
+    letter-spacing: 0.1em;
+}
+
+.register-title{
+    text-align: center;
+    font-family: serif;
+}
+
+.register-title-sub{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.input-area{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label{
+    font-weight: bold;
+}
+ 
+.form-input{
+    width: 400px;
+    height: 50px;
+    border: solid 1px #e0dfde;
+    border-radius: 3px;
+    font-size: 15px;
+}
+ 
+.form-actions{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-submit{
+    padding: 10px 30px;
+    background: linear-gradient(90deg,#d5a9dc,#ffbde1);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.register-login-link{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-button{
+    font-family: serif;
+    color: #2d99ff;
+    cursor: pointer;
+}
+
 .form__error {
-  color: red;
-  font-size: 12px;
-  margin-top: 4px;
+    color: red;
+    font-size: 14px;
+    margin-top: 4px;
 }

@@ -35,13 +35,8 @@ class WeightLogController extends Controller
         // 目標体重との差を計算（nullチェック付き）
         $diff = null;
         if ($target && $currentWeight) {
-            $diff = $currentWeight->weight - $target->target_weight;
+            $diff = $target->target_weight - $currentWeight->weight;
         }
-
-        // ページネーションで8件ずつ取得
-        $weightLogs = WeightLog::where('user_id', $user->id)
-            ->orderBy('date', 'desc')
-            ->paginate(8);
 
         return view('weight_logs.index', compact('target', 'currentWeight', 'diff', 'weightLogs'));
     }
@@ -92,7 +87,7 @@ class WeightLogController extends Controller
 
         $target = WeightTarget::where('user_id', $user->id)->first();
         $currentWeight = WeightLog::where('user_id', $user->id)->orderBy('date', 'desc')->first();
-        $diff = ($target && $currentWeight) ? $currentWeight->weight - $target->target_weight : null;
+        $diff = ($target && $currentWeight) ? $target->target_weight - $currentWeight->weight : null;
 
         return view('weight_logs.index', compact('weightLogs', 'target', 'currentWeight', 'diff'));
     }
@@ -112,7 +107,7 @@ class WeightLogController extends Controller
             'exercise_content' => $request->exercise_content,
         ]);
 
-        return redirect()->route('weight_logs.index')->with('success', 'データを登録しました');
+        return redirect()->route('weight_logs.index');
     }
 
     // "HH:MM"形式の時間を「分」に変換
@@ -173,14 +168,14 @@ class WeightLogController extends Controller
         ]);
 
         // 一覧画面へリダイレクト
-        return redirect()->route('weight_logs.index')->with('success', '体重ログを更新しました');
+        return redirect()->route('weight_logs.index');
     }
 
     // 削除処理
     public function destroy(WeightLog $weightLog)
     {
         $weightLog->delete();
-        return redirect()->route('weight_logs.index')->with('success', 'データを削除しました');
+        return redirect()->route('weight_logs.index');
     }
 
 }

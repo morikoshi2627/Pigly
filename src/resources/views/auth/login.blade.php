@@ -1,60 +1,60 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.base')
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PiGly - ログイン画面</title>
-  <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-  <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+@endsection
 
-</head>
+@section('body')
+<div class="pigly-whole">
+    <div class="pigly-inner">
+        <header class="header">
+            <div class="header-inner">
+                PiGly
+            </div>
+        </header>
 
-<body>
+        <main class="login-content">
 
-  <header class="header">
-    <div class="header-inner">
-      PiGly
+            <div class="login-inner">
+
+                <!-- タイトル -->
+                <h2 class="login-title">ログイン</h2>
+
+                <!-- ログイン用フォーム -->
+                <form class="login-link" method="POST" action="{{ route('login') }}" novalidate>
+                    @csrf
+                    <div class="input-area">
+                        <div class="form-group">
+                            <label class="form-label" for="email">メールアドレス</label>
+                            <input class="form-input" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレスを入力" required />
+                            @error('email')
+                            <div class="form__error">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">パスワード</label>
+                            <input class="form-input" type="password" name="password" placeholder="パスワードを入力" required />
+                            @error('password')
+                            <div class="form__error">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="login-button" type="submit">ログイン</button>
+                    </div>
+                </form>
+
+                <!-- ログインリンク -->
+                <div class="account-link">
+                    <a class="account-button" href="{{ route('register.step1') }}">アカウント作成はこちら</a>
+                </div>
+
+            </div>
+        </main>
     </div>
-  </header>
-
-  <main class="login-content">
-
-    <div class="login-inner">
-
-      <!-- タイトル -->
-      <h2 class="login-title">ログイン</h2>
-
-      <!-- ログイン用フォーム -->
-      <form class="login-link" method="POST" action="{{ route('login') }}" novalidate>
-        @csrf
-        <div class="login-email">
-          <input type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレスを入力" required/>
-          @error('email')
-          <div class="form__error">
-            {{ $message }}
-          </div>
-          @enderror
-        </div>
-        <div class="login-password">
-          <input type="password" name="password" placeholder="パスワードを入力" required />
-          @error('password')
-          <div class="form__error">
-            {{ $message }}
-          </div>
-          @enderror
-        </div>
-        <button class="login-button" type="submit">ログイン</button>
-      </form>
-
-      <!-- ログインリンク -->
-      <div class="register-login-link">
-        <a href="{{ route('register.step1') }}">アカウント作成はこちら</a>
-      </div>
-
-    </div>
-  </main>
-</body>
-
-</html>
+</div>
+@endsection
