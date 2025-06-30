@@ -52,14 +52,6 @@
     font-weight: bold;
 }
 
-/* .form-input {
-    width: 300px;
-    height: 50px;
-    border: solid 1px #e0dfde;
-    border-radius: 3px;
-    font-size: 15px;
-} */
-
 .input-with-unit {
     display: flex;
     align-items: center;
@@ -95,7 +87,7 @@
     cursor: pointer;
 }
 
-.form__error {
+.form-error {
     color: red;
     font-size: 14px;
     margin-top: 4px;

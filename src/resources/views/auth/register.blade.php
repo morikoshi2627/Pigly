@@ -29,7 +29,7 @@
                             <label class="form-label" for="name">お名前</label>
                             <input class="form-input" type="text" id="name" name="name" value="{{ old('name') }}" placeholder="名前を入力" required>
                             @error('name')
-                            <div class="form__error">
+                            <div class="form-error">
                                 {{ $message }}
                             </div>
                             @enderror
@@ -39,7 +39,7 @@
                             <label class="form-label" for="email">メールアドレス</label>
                             <input class="form-input" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="メールアドレスを入力" required>
                             @error('email')
-                            <div class="form__error">
+                            <div class="form-error">
                                 {{ $message }}
                             </div>
                             @enderror
@@ -49,7 +49,7 @@
                             <label class="form-label" for="password">パスワード</label>
                             <input class="form-input" type="password" id="password" name="password" placeholder="パスワードを入力" required>
                             @error('password')
-                            <div class="form__error">
+                            <div class="form-error">
                                 {{ $message }}
                             </div>
                             @enderror

@@ -43,7 +43,7 @@
                 @enderror
 
                 <!-- 体重（数値） -->
-                <label class="edit-title for=" weight">体重</label>
+                <label class="edit-title" for="weight">体重</label>
                 <div class="edit-unit">
                     <input class="edit-input" type="number" step="0.1" name="weight" value="{{ old('weight',  $weightLog->weight) }}">
                     <p>kg</p>
@@ -55,7 +55,7 @@
                 @enderror
 
                 <!-- 摂取カロリー -->
-                <label class="edit-title for=" weight">摂取カロリー</label>
+                <label class="edit-title" for="weight">摂取カロリー</label>
                 <div class="edit-unit">
                     <input class="edit-input" type="text" name="calories" value="{{ old('calories', $weightLog->calories) }}">
                     <p>kcal</p>
@@ -67,7 +67,7 @@
                 @enderror
 
                 <!-- 運動時間（00:00形式） -->
-                <label class="edit-title for=" exercise_time">運動時間</label>
+                <label class="edit-title" for=" exercise_time">運動時間</label>
                 <input class="edit-input" type="time" name="exercise_time" value="{{ old('exercise_time', sprintf('%02d:%02d', floor($weightLog->exercise_time / 60), $weightLog->exercise_time % 60)) }}">
                 @error('exercise_time')
                 <div class="form-error">
@@ -76,7 +76,7 @@
                 @enderror
 
                 <!-- 運動内容 -->
-                <label class="edit-title for=" exercise_content">運動内容</label>
+                <label class="edit-title" for=" exercise_content">運動内容</label>
                 <input class="edit-input-content" type="text" name="exercise_content" value="{{ old('exercise_content', $weightLog->exercise_content) }}">
                 @error('exercise_content')
                 <div class="form-error">
@@ -88,16 +88,16 @@
             <div class="form-actions">
                 <a class="back-button" href="{{ route('weight_logs.index') }}">戻る</a>
                 <button class="submit-button" type="submit">更新する</button>
-        </form>
+                </form>
 
-        <!-- 削除処理 -->
-        <form method="POST" action="{{ route('weight_logs.delete', ['weightLog' => $weightLog->id]) }}" style="display: inline;" onsubmit="return confirm('本当に削除しますか？');">
-            @csrf
-            <button class="icon-delete" type=" submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                <img src="{{ asset('storage/images/trash-icon.png') }}" alt="削除" style="width: 32px; height: 32px;">
-            </button>
-        </form>
-    </div>
+                <!-- 削除処理 -->
+                <form method="POST" action="{{ route('weight_logs.delete', ['weightLog' => $weightLog->id]) }}" style="display: inline;" onsubmit="return confirm('本当に削除しますか？');">
+                    @csrf
+                    <button class="icon-delete" type=" submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+                        <img src="{{ asset('storage/images/trash-icon.png') }}" alt="削除" style="width: 32px; height: 32px;">
+                    </button>
+                </form>
+            </div>
     </div>
 </main>
 @endsection

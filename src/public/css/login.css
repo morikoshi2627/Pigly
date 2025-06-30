@@ -82,7 +82,7 @@
     cursor: pointer;
 }
 
-.form__error {
+.form-error {
     color: red;
     font-size: 14px;
     margin-top: 4px;

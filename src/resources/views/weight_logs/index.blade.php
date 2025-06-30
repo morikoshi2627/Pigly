@@ -130,9 +130,6 @@
 <input type="checkbox" id="modal-toggle" class="modal-checkbox" hidden
     {{ count($errors) > 0 ? 'checked' : '' }}>
 
-<!-- モーダル開閉チェックボックス -->
-<input class="modal-checkbox" type="checkbox" id="modal-toggle" hidden>
-
 <!-- モーダルウィンドウ本体 -->
 <div class="modal">
     <div class="modal-content">
@@ -183,7 +180,7 @@
             <label class="modal-title">運動内容
                 <span class="label-required">必須</span>
             </label>
-            <input class="modal-input-content" type="text" name="exercise_content" value="{{ old('exercise_content') }}" placeholder="運動内容を追加">
+            <input class="modal-inputcontent" type="text" name="exercise_content" value="{{ old('exercise_content') }}" placeholder="運動内容を追加">
             @error('exercise_content')
             <p class="error">{{ $message }}</p>
             @enderror

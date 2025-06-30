@@ -26,18 +26,18 @@
                     <div class="input-area">
                         <div class="form-group">
                             <label class="form-label" for="email">メールアドレス</label>
-                            <input class="form-input" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレスを入力" required />
+                            <input class="form-input" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレスを入力" required>
                             @error('email')
-                            <div class="form__error">
+                            <div class="form-error">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="password">パスワード</label>
-                            <input class="form-input" type="password" name="password" placeholder="パスワードを入力" required />
+                            <input class="form-input" type="password" name="password" placeholder="パスワードを入力" required>
                             @error('password')
-                            <div class="form__error">
+                            <div class="form-error">
                                 {{ $message }}
                             </div>
                             @enderror

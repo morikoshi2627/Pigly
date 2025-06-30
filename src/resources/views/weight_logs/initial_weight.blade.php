@@ -33,7 +33,7 @@
                             </div>
 
                             @error('weight')
-                            <div class="form__error">
+                            <div class="form-error">
                                 {{ $message }}
                             </div>
                             @enderror
@@ -46,7 +46,7 @@
                                 <p class="unit">kg</p>
                             </div>
                             @error('target_weight')
-                            <div class="form__error">
+                            <div class="form-error">
                                 {{ $message }}
                             </div>
                             @enderror
