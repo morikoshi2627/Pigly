@@ -55,7 +55,7 @@
                 @enderror
 
                 <!-- 摂取カロリー -->
-                <label class="edit-title" for="weight">摂取カロリー</label>
+                <label class="edit-title" for="calories">摂取カロリー</label>
                 <div class="edit-unit">
                     <input class="edit-input" type="text" name="calories" value="{{ old('calories', $weightLog->calories) }}">
                     <p>kcal</p>
@@ -88,16 +88,16 @@
             <div class="form-actions">
                 <a class="back-button" href="{{ route('weight_logs.index') }}">戻る</a>
                 <button class="submit-button" type="submit">更新する</button>
-                </form>
+        </form>
 
-                <!-- 削除処理 -->
-                <form method="POST" action="{{ route('weight_logs.delete', ['weightLog' => $weightLog->id]) }}" style="display: inline;" onsubmit="return confirm('本当に削除しますか？');">
-                    @csrf
-                    <button class="icon-delete" type=" submit" style="background: none; border: none; padding: 0; cursor: pointer;">
-                        <img src="{{ asset('storage/images/trash-icon.png') }}" alt="削除" style="width: 32px; height: 32px;">
-                    </button>
-                </form>
-            </div>
+        <!-- 削除処理 -->
+        <form method="POST" action="{{ route('weight_logs.delete', ['weightLog' => $weightLog->id]) }}" style="display: inline;" onsubmit="return confirm('本当に削除しますか？');">
+            @csrf
+            <button class="icon-delete" type=" submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+                <img src="{{ asset('storage/images/trash-icon.png') }}" alt="削除" style="width: 32px; height: 32px;">
+            </button>
+        </form>
+    </div>
     </div>
 </main>
 @endsection
