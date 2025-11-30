@@ -5,6 +5,14 @@
 - 画像は `storage/app/public/images` に保存されています。
 - 画像をブラウザからアクセスするために、php artisan migrate --seed を実行後、php artisan storage:link を実行してください。
 
+### テストユーザー（ダミーユーザー）情報  
+本アプリには、確認用の固定アカウントを用意しています。(データ35件)    
+以下のメールアドレスとパスワードでログインしてください。  
+
+1. 固定管理者名：スリム 花子  
+- メールアドレス：test@example.com  
+- パスワード：password    
+
 ### Docker ビルド
 
 1. git clone https://github.com/morikoshi2627/pigly.git

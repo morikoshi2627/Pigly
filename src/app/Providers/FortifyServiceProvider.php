@@ -68,10 +68,10 @@ class FortifyServiceProvider extends ServiceProvider
                 return Limit::perMinute(10)->by($email . $request->ip());
             });
         
-        // ログイン　オーバーライド
+        // ログイン オーバーライド
         $this->app->singleton(LoginResponseContract::class, LoginResponse::class);
         
-        // ログアウト　オーバーライド
+        // ログアウト オーバーライド
         $this->app->singleton(LogoutResponseContract::class, LogoutResponse::class);
     }
 }
